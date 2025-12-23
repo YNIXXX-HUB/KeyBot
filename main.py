@@ -11,27 +11,28 @@ from threading import Thread
 # ==========================================
 # CONFIGURATION
 # ==========================================
-BOT_TOKEN = "MTQ1MjU2NzY0Njc3NTI4MzcxNA.GERt2K.mQiH5LSEJxZi6uI0LwQFsWck6FryRTkG94bPFg" 
+BOT_TOKEN = "MTQ1MjU2NzY0Njc3NTI4MzcxNA.G-qnqs.YNUltkblTNJb2apMf5Zu3jhYB9D_GeGbpA_gqI" 
 FIREBASE_URL = "https://key-verifier-66677-default-rtdb.firebaseio.com/SCRIPT_DATA"
 ADMIN_PASSWORD = "43924"
 # ==========================================
 
-# --- RENDER WEB SERVER (REQUIRED) ---
+# --- RENDER KEEP-ALIVE SYSTEM ---
+# This specific setup fixes the "No open ports" crash
 app = Flask('')
 
 @app.route('/')
 def home():
-    return "Render is happy. Bot is running."
+    return "Bot is running!"
 
 def run():
-    # Render assigns a specific PORT, we must use it
-    port = int(os.environ.get("PORT", 8080))
+    # Render forces us to use a specific port they give us
+    port = int(os.environ.get("PORT", 10000)) 
     app.run(host='0.0.0.0', port=port)
 
 def keep_alive():
     t = Thread(target=run)
     t.start()
-# ------------------------------------
+# --------------------------------
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -104,9 +105,7 @@ async def resetallkeys(ctx, password: str = None):
         write_firebase_data("", {"keys": {}, "discord_users": {}}, "PUT")
         await ctx.send("⚠️ **DATABASE WIPED** ⚠️")
 
-# START THE FAKE SERVER, THEN THE BOT
-try:
+# STARTUP
+if __name__ == "__main__":
     keep_alive()
     bot.run(BOT_TOKEN)
-except Exception as e:
-    print(f"Error: {e}")
