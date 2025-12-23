@@ -9,7 +9,7 @@ import json
 # CONFIGURATION
 # ==========================================
 # PASTE YOUR TOKEN HERE
-BOT_TOKEN = "PASTE_YOUR_TOKEN_HERE" 
+BOT_TOKEN = "MTQ1MjU2NzY0Njc3NTI4MzcxNA.GERt2K.mQiH5LSEJxZi6uI0LwQFsWck6FryRTkG94bPFg" 
 FIREBASE_URL = "https://key-verifier-66677-default-rtdb.firebaseio.com/SCRIPT_DATA"
 ADMIN_PASSWORD = "43924"
 # ==========================================
