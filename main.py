@@ -11,7 +11,7 @@ from threading import Thread
 # ==========================================
 # CONFIGURATION
 # ==========================================
-BOT_TOKEN = "MTQ1NDk1Nzk0NjI4NTk4MTc0Nw.GgLAwZ.YpobSTlXWidO_x9bKvmWq9rpSWiOA6Pr8NLaJU" 
+BOT_TOKEN = "MTQ1NDk1Nzk0NjI4NTk4MTc0Nw.G2MwFj.69meOsvE_1UT3OzUD74LudRJy-H2vGqhoDyV_M" 
 FIREBASE_URL = "https://key-verifier-66677-default-rtdb.firebaseio.com/SCRIPT_DATA"
 ADMIN_PASSWORD = "43924"
 # ==========================================
